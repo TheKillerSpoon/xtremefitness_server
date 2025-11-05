@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="da">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>API Index</title>
+    <style>
+      :root {
+        --bg: #0b1220;
+        --card: #121a2b;
+        --muted: #9fb0d9;
+        --acc: #5aa9e6;
+        --text: #e9eefc;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        padding: 32px;
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica,
+          Arial, sans-serif;
+        background: radial-gradient(
+          1200px 800px at 80% -10%,
+          #12203a 0%,
+          #0b1220 60%,
+          #080d18 100%
+        );
+        color: var(--text);
+      }
+      header {
+        max-width: 900px;
+        margin: 0 auto 24px auto;
+      }
+      h1 {
+        margin: 0 0 8px 0;
+        font-weight: 700;
+        letter-spacing: 0.2px;
+      }
+      .subtitle {
+        color: var(--muted);
+        margin: 0;
+      }
+      .grid {
+        display: grid;
+        gap: 16px;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        max-width: 900px;
+        margin: 24px auto;
+      }
+      .card {
+        background: linear-gradient(180deg, #141f36 0%, #101827 100%);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        border-radius: 14px;
+        padding: 16px 16px 12px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+      }
+      .card h2 {
+        margin: 0 0 8px 0;
+        font-size: 18px;
+      }
+      .desc {
+        color: var(--muted);
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: 8px;
+      }
+      li a {
+        display: inline-block;
+        text-decoration: none;
+        color: var(--text);
+        padding: 6px 10px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 10px;
+        font-size: 14px;
+      }
+      li a:hover {
+        border-color: var(--acc);
+        box-shadow: 0 0 0 3px rgba(90, 169, 230, 0.18) inset;
+      }
+      code {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        font-size: 12px;
+        color: #b9d2ff;
+      }
+      footer {
+        max-width: 900px;
+        margin: 24px auto 0;
+        color: var(--muted);
+        font-size: 13px;
+      }
+      .pill {
+        display: inline-block;
+        padding: 2px 8px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 999px;
+        margin-left: 8px;
+        font-size: 12px;
+        color: var(--muted);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Xtreme Fitness API</h1>
+      <p class="subtitle">
+        Hurtige links til dine vigtigste endpoints. GET-links er klikbare.
+      </p>
+    </header>
+
+    <div class="grid">
+      <!-- Users -->
+      <section class="card">
+        <h2>Users</h2>
+        <p class="desc">Brugere (liste og CRUD).</p>
+        <ul>
+          <li><a href="/users">GET /users</a></li>
+          <li><code>GET /user/:id</code></li>
+          <li><code>POST /user</code></li>
+          <li><code>PUT /user/:id</code></li>
+          <li><code>DELETE /user/:id</code></li>
+        </ul>
+      </section>
+
+      <!-- Reviews -->
+      <section class="card">
+        <h2>Reviews</h2>
+        <p class="desc">Anmeldelser (liste og CRUD).</p>
+        <ul>
+          <li><a href="/reviews">GET /reviews</a></li>
+          <li><code>POST /review</code></li>
+          <li><code>PUT /review/:id</code></li>
+          <li><code>DELETE /review/:id</code></li>
+          <li><code>GET /review/:id</code></li>
+        </ul>
+      </section>
+
+      <!-- Benefits -->
+      <section class="card">
+        <h2>Benefits</h2>
+        <p class="desc">Fordele (liste og CRUD).</p>
+        <ul>
+          <li><a href="/benefits">GET /benefits</a></li>
+          <li><code>POST /benefit</code></li>
+          <li><code>PUT /benefit/:id</code></li>
+          <li><code>DELETE /benefit/:id</code></li>
+          <li><code>GET /benefit/:id</code></li>
+        </ul>
+      </section>
+
+      <!-- Blogs -->
+      <section class="card">
+        <h2>Blogs</h2>
+        <p class="desc">Blogindlæg (liste og CRUD).</p>
+        <ul>
+          <li><a href="/blogs">GET /blogs</a></li>
+          <li><code>POST /blog</code></li>
+          <li><code>PUT /blog/:id</code></li>
+          <li><code>DELETE /blog/:id</code></li>
+          <li><code>GET /blog/:id</code></li>
+        </ul>
+      </section>
+
+      <!-- Employees -->
+      <section class="card">
+        <h2>Employees</h2>
+        <p class="desc">Medarbejdere (liste og CRUD).</p>
+        <ul>
+          <li><a href="/employees">GET /employees</a></li>
+          <li><code>POST /employee</code></li>
+          <li><code>PUT /employee/:id</code></li>
+          <li><code>DELETE /employee/:id</code></li>
+          <li><code>GET /employee/:id</code></li>
+        </ul>
+      </section>
+
+      <!-- Exercises -->
+      <section class="card">
+        <h2>Exercises</h2>
+        <p class="desc">Øvelser (liste og CRUD).</p>
+        <ul>
+          <li><a href="/exercises">GET /exercises</a></li>
+          <li><code>POST /exercise</code></li>
+          <li><code>PUT /exercise/:id</code></li>
+          <li><code>DELETE /exercise/:id</code></li>
+          <li><code>GET /exercise/:id</code></li>
+        </ul>
+      </section>
+
+      <!-- Messages -->
+      <section class="card">
+        <h2>Messages</h2>
+        <p class="desc">Beskeder (liste og CRUD).</p>
+        <ul>
+          <li><a href="/messages">GET /messages</a></li>
+          <li><code>POST /message</code></li>
+          <li><code>PUT /message/:id</code></li>
+          <li><code>DELETE /message/:id</code></li>
+          <li><code>GET/message/:id</code></li>
+        </ul>
+      </section>
+
+      <!-- Services -->
+      <section class="card">
+        <h2>Services</h2>
+        <p class="desc">Services (liste og CRUD).</p>
+        <ul>
+          <li><a href="/services">GET /services</a></li>
+          <li><code>POST /service</code></li>
+          <li><code>PUT /service/:id</code></li>
+          <li><code>DELETE /service/:id</code></li>
+          <li><code>GET /service/:id</code></li>
+        </ul>
+      </section>
+
+      <!-- Subscriptions -->
+      <section class="card">
+        <h2>Subscriptions</h2>
+        <p class="desc">Abonnementer (liste og CRUD).</p>
+        <ul>
+          <li><a href="/subscriptions">GET /subscriptions</a></li>
+          <li><code>POST /subscription</code></li>
+          <li><code>PUT /subscription/:id</code></li>
+          <li><code>DELETE /subscription/:id</code></li>
+          <li><code>GET /subscription/:id</code></li>
+        </ul>
+      </section>
+
+      <!-- Workouts -->
+      <section class="card">
+        <h2>Workouts</h2>
+        <p class="desc">Træningsprogrammer (liste og CRUD).</p>
+        <ul>
+          <li><a href="/workouts">GET /workouts</a></li>
+          <li><code>POST /workout</code></li>
+          <li><code>PUT /workout/:id</code></li>
+          <li><code>DELETE /workout/:id</code></li>
+          <li><code>GET /workout/:id</code></li>
+        </ul>
+      </section>
+    </div>
+    <footer>
+      Postman:
+      <a
+        target="_blank"
+        href="https://mcdmviborg.postman.co/workspace/webmcdm.dk---Server-Projects~f1ca1e4d-4cb3-49f6-9664-7a010d498024/collection/38584738-f5213950-d1f9-45b2-b515-740076af3420?action=share&source=copy-link&creator=38584738"
+        >Postman</a
+      >
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,1938 @@
+{
+	"info": {
+		"_postman_id": "90aa9af2-9cf4-4d9d-9059-878661420dfd",
+		"name": "MCD - Xtreme Fitness",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38584738",
+		"_collection_link": "https://mcdmviborg.postman.co/workspace/webmcdm.dk---Server-Projects~f1ca1e4d-4cb3-49f6-9664-7a010d498024/collection/38584738-90aa9af2-9cf4-4d9d-9059-878661420dfd?action=share&source=collection_link&creator=38584738"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Users",
+					"item": [
+						{
+							"name": "Get Users",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server_path}}/users",
+									"host": [
+										"{{server_path}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "User",
+					"item": [
+						{
+							"name": "Create User",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Anne",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "1234",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "anne@mediacollege.dk",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": []
+										},
+										{
+											"key": "role",
+											"value": "member",
+											"type": "text"
+										},
+										{
+											"key": "enrolledWorkouts",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "subscription",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{server_path}}/user",
+									"host": [
+										"{{server_path}}"
+									],
+									"path": [
+										"user"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update User",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "id",
+											"value": "68d252db8bb0b52736231295",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "Anne",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "email",
+											"value": "anne@mediacollege.com",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": [],
+											"disabled": true
+										},
+										{
+											"key": "password",
+											"value": "1234",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "role",
+											"value": "guest",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "enrolledWorkouts",
+											"value": "68d2503b11ee6af835aa9914",
+											"type": "text"
+										},
+										{
+											"key": "subscription",
+											"value": "67d1133b11e46af835aa9915",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{server_path}}/user",
+									"host": [
+										"{{server_path}}"
+									],
+									"path": [
+										"user"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete User",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{server_path}}/user/68a4691670e07b45a2f245a9",
+									"host": [
+										"{{server_path}}"
+									],
+									"path": [
+										"user",
+										"68a4691670e07b45a2f245a9"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get User ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server_path}}/user/68a4691670e07b45a2f245a9",
+									"host": [
+										"{{server_path}}"
+									],
+									"path": [
+										"user",
+										"68a4691670e07b45a2f245a9"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get User Workouts",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server_path}}/user/68d252db8bb0b52736231295/workouts",
+									"host": [
+										"{{server_path}}"
+									],
+									"path": [
+										"user",
+										"68d252db8bb0b52736231295",
+										"workouts"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Workout To User",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"workoutId\": \"68a44adf0abf87b20edb2f28\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server_path}}/user/68a44adf0abf87b20edb2eea/enroll",
+									"host": [
+										"{{server_path}}"
+									],
+									"path": [
+										"user",
+										"68a44adf0abf87b20edb2eea",
+										"enroll"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Workout From User",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{server_path}}/user/68a44adf0abf87b20edb2eea/enroll/68a44adf0abf87b20edb2f28",
+									"host": [
+										"{{server_path}}"
+									],
+									"path": [
+										"user",
+										"68a44adf0abf87b20edb2eea",
+										"enroll",
+										"68a44adf0abf87b20edb2f28"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Services",
+			"item": [
+				{
+					"name": "Services",
+					"item": [
+						{
+							"name": "Get Services",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server_path}}/services",
+									"host": [
+										"{{server_path}}"
+									],
+									"path": [
+										"services"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Service",
+					"item": [
+						{
+							"name": "Create Service",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "image",
+											"type": "file",
+											"src": []
+										},
+										{
+											"key": "title",
+											"value": "Ny Service Titel",
+											"type": "text"
+										},
+										{
+											"key": "teaser",
+											"value": "En lille teaser på, hvad den nye service er.",
+											"type": "text"
+										},
+										{
+											"key": "content",
+											"value": "Og en mass etekst der beskriver, præcis hvad den nye Service inkluderer.",
+											"type": "text"
+										},
+										{
+											"key": "icon",
+											"type": "file",
+											"src": []
+										}
+									]
+								},
+								"url": {
+									"raw": "{{server_path}}/service",
+									"host": [
+										"{{server_path}}"
+									],
+									"path": [
+										"service"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Service",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "id",
+											"value": "68a5b4bc285a83a04baf8787",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": [],
+											"disabled": true
+										},
+										{
+											"key": "title",
+											"value": "Service Part Two",
+											"type": "text"
+										},
+										{
+											"key": "teaser",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "content",
+											"value": "En masse lorem ipsum som slet ikke er lorem ipsum alligevel",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "icon",
+											"type": "file",
+											"src": [],
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{server_path}}/service",
+									"host": [
+										"{{server_path}}"
+									],
+									"path": [
+										"service"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Service",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{server_path}}/service/68a5b4bc285a83a04baf8787",
+									"host": [
+										"{{server_path}}"
+									],
+									"path": [
+										"service",
+										"68a5b4bc285a83a04baf8787"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Service By ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server_path}}/service/68a44adf0abf87b20edb2efa",
+									"host": [
+										"{{server_path}}"
+									],
+									"path": [
+										"service",
+										"68a44adf0abf87b20edb2efa"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Workouts",
+			"item": [
+				{
+					"name": "Workouts",
+					"item": [
+						{
+							"name": "Get Workouts",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server_path}}/workouts",
+									"host": [
+										"{{server_path}}"
+									],
+									"path": [
+										"workouts"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Workout",
+					"item": [
+						{
+							"name": "Create Workout",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Pilates\",\r\n    \"time\": \"11:00\",\r\n    \"weekday\": \"Torsdag\",\r\n    \"description\": \"Pilates er en træningsform, der fokuserer på kontrollerede bevægelser, åndedræt og kropsbevidsthed. Øvelserne styrker især kernen (mave, ryg og bækkenbund), forbedrer holdning, fleksibilitet og balance, og kan både udføres på måtte eller med specialudstyr.\"\r\n}"
+								},
+								"url": {
+									"raw": "{{server_path}}/workout",
+									"host": [
+										"{{server_path}}"
+									],
+									"path": [
+										"workout"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Workout",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"68dccad7412b261bdbf60d59\",\r\n    \"title\": \"Pilates update\",\r\n    \"time\": \"11:00\",\r\n    \"weekday\": \"Søndag\",\r\n    \"description\": \"Pilates er en træningsform, der fokuserer på kontrollerede bevægelser, åndedræt og kropsbevidsthed.\"\r\n}\r\n"
+								},
+								"url": {
+									"raw": "{{server_path}}/workout",
+									"host": [
+										"{{server_path}}"
+									],
+									"path": [
+										"workout"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Workout",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{server_path}}/workout/68dccab9412b261bdbf60d57",
+									"host": [
+										"{{server_path}}"
+									],
+									"path": [
+										"workout",
+										"68dccab9412b261bdbf60d57"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Workout by ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server_path}}/workout/68dccad7412b261bdbf60d59",
+									"host": [
+										"{{server_path}}"
+									],
+									"path": [
+										"workout",
+										"68dccad7412b261bdbf60d59"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Blogs",
+			"item": [
+				{
+					"name": "Blogs",
+					"item": [
+						{
+							"name": "Get Blogs",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server_path}}/blogs",
+									"host": [
+										"{{server_path}}"
+									],
+									"path": [
+										"blogs"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Blog",
+					"item": [
+						{
+							"name": "Create Blog",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/AnneLundMøller/Desktop/Billeder/javascript.png"
+										},
+										{
+											"key": "title",
+											"value": "Ny Blog 1",
+											"type": "text"
+										},
+										{
+											"key": "teaser",
+											"value": "En lille forsmag på, hvad der venter",
+											"type": "text"
+										},
+										{
+											"key": "content",
+											"value": "Hele bloggen som den er med en masse sludder og tekst.",
+											"type": "text"
+										},
+										{
+											"key": "author",
+											"value": "Postman",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{server_path}}/blog",
+									"host": [
+										"{{server_path}}"
+									],
+									"path": [
+										"blog"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Blog",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "id",
+											"value": "68a5b6cd285a83a04baf8791",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/AnneLundMøller/Desktop/Billeder/javascript.png",
+											"disabled": true
+										},
+										{
+											"key": "title",
+											"value": "Update på Ny blog",
+											"type": "text"
+										},
+										{
+											"key": "teaser",
+											"value": "En lille forsmag på, hvad der venter",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "content",
+											"value": "Hele bloggen som den er med en masse sludder og tekst.",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "author",
+											"value": "Postman",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{server_path}}/blog",
+									"host": [
+										"{{server_path}}"
+									],
+									"path": [
+										"blog"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Blog",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "id",
+											"value": "68a5b6cd285a83a04baf8791",
+											"type": "text"
+										},
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/Users/AnneLundMøller/Desktop/Billeder/javascript.png",
+											"disabled": true
+										},
+										{
+											"key": "title",
+											"value": "Update på Ny blog",
+											"type": "text"
+										},
+										{
+											"key": "teaser",
+											"value": "En lille forsmag på, hvad der venter",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "content",
+											"value": "Hele bloggen som den er med en masse sludder og tekst.",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "author",
+											"value": "Postman",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{server_path}}/blog/68a5b6cd285a83a04baf8791",
+									"host": [
+										"{{server_path}}"
+									],
+									"path": [
+										"blog",
+										"68a5b6cd285a83a04baf8791"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Blog By Id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "id",
+											"value": "68a5b6cd285a83a04baf8791",
+											"type": "text"
+										},
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/Users/AnneLundMøller/Desktop/Billeder/javascript.png",
+											"disabled": true
+										},
+										{
+											"key": "title",
+											"value": "Update på Ny blog",
+											"type": "text"
+										},
+										{
+											"key": "teaser",
+											"value": "En lille forsmag på, hvad der venter",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "content",
+											"value": "Hele bloggen som den er med en masse sludder og tekst.",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "author",
+											"value": "Postman",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{server_path}}/blog/68a44adf0abf87b20edb2f14",
+									"host": [
+										"{{server_path}}"
+									],
+									"path": [
+										"blog",
+										"68a44adf0abf87b20edb2f14"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Employees",
+			"item": [
+				{
+					"name": "Employees",
+					"item": [
+						{
+							"name": "Get Employees",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server_path}}/employees",
+									"host": [
+										"{{server_path}}"
+									],
+									"path": [
+										"employees"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Employee",
+					"item": [
+						{
+							"name": "Post Employee",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/AnneLundMøller/Desktop/Billeder/ninja.png"
+										},
+										{
+											"key": "name",
+											"value": "Ninja",
+											"type": "text"
+										},
+										{
+											"key": "area",
+											"value": "Yoga",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{server_path}}/employee",
+									"host": [
+										"{{server_path}}"
+									],
+									"path": [
+										"employee"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Employee",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "id",
+											"value": "68a5b87fa41459930d462feb",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/AnneLundMøller/Desktop/Billeder/ninja.png",
+											"disabled": true
+										},
+										{
+											"key": "name",
+											"value": "Ninja",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "area",
+											"value": "Mindfulness",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{server_path}}/employee",
+									"host": [
+										"{{server_path}}"
+									],
+									"path": [
+										"employee"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Employee Copy",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "id",
+											"value": "68a5b87fa41459930d462feb",
+											"type": "text"
+										},
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/Users/AnneLundMøller/Desktop/Billeder/ninja.png",
+											"disabled": true
+										},
+										{
+											"key": "name",
+											"value": "Ninja",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "area",
+											"value": "Mindfulness",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{server_path}}/employee/68a5b87fa41459930d462feb",
+									"host": [
+										"{{server_path}}"
+									],
+									"path": [
+										"employee",
+										"68a5b87fa41459930d462feb"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Employee By Id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "id",
+											"value": "68a5b87fa41459930d462feb",
+											"type": "text"
+										},
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/Users/AnneLundMøller/Desktop/Billeder/ninja.png",
+											"disabled": true
+										},
+										{
+											"key": "name",
+											"value": "Ninja",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "area",
+											"value": "Mindfulness",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{server_path}}/employee/68a44adf0abf87b20edb2f02",
+									"host": [
+										"{{server_path}}"
+									],
+									"path": [
+										"employee",
+										"68a44adf0abf87b20edb2f02"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Exercises",
+			"item": [
+				{
+					"name": "Exercises",
+					"item": [
+						{
+							"name": "Get Exercises",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server_path}}/exercises",
+									"host": [
+										"{{server_path}}"
+									],
+									"path": [
+										"exercises"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Exercise",
+					"item": [
+						{
+							"name": "Create Exercise",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/AnneLundMøller/Desktop/Billeder/ninja.png"
+										},
+										{
+											"key": "title",
+											"value": "En titel på en øvelse",
+											"type": "text"
+										},
+										{
+											"key": "teaser",
+											"value": "En lille forsmag på øvelsesbeskrivelsen",
+											"type": "text"
+										},
+										{
+											"key": "content",
+											"value": "En lang lang tekst der beskriver selve øvelsen.",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{server_path}}/exercise",
+									"host": [
+										"{{server_path}}"
+									],
+									"path": [
+										"exercise"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Exercise",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "id",
+											"value": "68a6f423bf6110e1395f7a9e",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/AnneLundMøller/Desktop/Billeder/ninja.png",
+											"disabled": true
+										},
+										{
+											"key": "title",
+											"value": "En opdatering på titlen på en øvelse",
+											"type": "text"
+										},
+										{
+											"key": "teaser",
+											"value": "En lille forsmag på øvelsesbeskrivelsen",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "content",
+											"value": "En lang lang tekst der beskriver selve øvelsen.",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{server_path}}/exercise",
+									"host": [
+										"{{server_path}}"
+									],
+									"path": [
+										"exercise"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Exercise",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "id",
+											"value": "68a6f423bf6110e1395f7a9e",
+											"type": "text"
+										},
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/Users/AnneLundMøller/Desktop/Billeder/ninja.png",
+											"disabled": true
+										},
+										{
+											"key": "title",
+											"value": "En opdatering på titlen på en øvelse",
+											"type": "text"
+										},
+										{
+											"key": "teaser",
+											"value": "En lille forsmag på øvelsesbeskrivelsen",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "content",
+											"value": "En lang lang tekst der beskriver selve øvelsen.",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{server_path}}/exercise/68a6f423bf6110e1395f7a9e",
+									"host": [
+										"{{server_path}}"
+									],
+									"path": [
+										"exercise",
+										"68a6f423bf6110e1395f7a9e"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Exercise By Id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "id",
+											"value": "68a6f423bf6110e1395f7a9e",
+											"type": "text"
+										},
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/Users/AnneLundMøller/Desktop/Billeder/ninja.png",
+											"disabled": true
+										},
+										{
+											"key": "title",
+											"value": "En opdatering på titlen på en øvelse",
+											"type": "text"
+										},
+										{
+											"key": "teaser",
+											"value": "En lille forsmag på øvelsesbeskrivelsen",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "content",
+											"value": "En lang lang tekst der beskriver selve øvelsen.",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{server_path}}/exercise/68a44adf0abf87b20edb2f1a",
+									"host": [
+										"{{server_path}}"
+									],
+									"path": [
+										"exercise",
+										"68a44adf0abf87b20edb2f1a"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Messages",
+			"item": [
+				{
+					"name": "Messages",
+					"item": [
+						{
+							"name": "Get Messages",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server_path}}/messages",
+									"host": [
+										"{{server_path}}"
+									],
+									"path": [
+										"messages"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Message",
+					"item": [
+						{
+							"name": "Create Message",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Ninja\",\r\n    \"email\": \"ninja@mail.com\",\r\n    \"phone\": \"12345678\",\r\n    \"subject\": \"Tilmelding til yoga\",\r\n    \"message\": \"Jeg vil gerne tilmeldes yoga-holdet, tak!\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server_path}}/message",
+									"host": [
+										"{{server_path}}"
+									],
+									"path": [
+										"message"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Message",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"68a8170e596747dd1e0e4300\",\r\n    \"name\": \"Ninja\",\r\n    \"email\": \"ninja@mail.com\",\r\n    \"phone\": \"12345678\",\r\n    \"subject\": \"Tilmelding til yoga\",\r\n    \"message\": \"Jeg vil ikke tilmeldes yoga-holdet alligevel!\",\r\n    \"status\": \"true\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server_path}}/message",
+									"host": [
+										"{{server_path}}"
+									],
+									"path": [
+										"message"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Message By Id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server_path}}/message/68a8170e596747dd1e0e4300",
+									"host": [
+										"{{server_path}}"
+									],
+									"path": [
+										"message",
+										"68a8170e596747dd1e0e4300"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Message",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{server_path}}/message/68a8170e596747dd1e0e4300",
+									"host": [
+										"{{server_path}}"
+									],
+									"path": [
+										"message",
+										"68a8170e596747dd1e0e4300"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Reviews",
+			"item": [
+				{
+					"name": "Reviews",
+					"item": [
+						{
+							"name": "Get Reviews",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Ninja\",\r\n    \"email\": \"ninja@mail.com\",\r\n    \"phone\": \"12345678\",\r\n    \"subject\": \"Tilmelding til yoga\",\r\n    \"message\": \"Jeg vil gerne tilmeldes yoga-holdet, tak!\"\r\n}"
+								},
+								"url": {
+									"raw": "{{server_path}}/reviews",
+									"host": [
+										"{{server_path}}"
+									],
+									"path": [
+										"reviews"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Review",
+					"item": [
+						{
+							"name": "Create Review",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"author\": \"Ninja\",\r\n    \"content\": \"Jeg elsker at gå til yoga hos Xtreme fitness\",\r\n    \"position\": \"Medlem\"\r\n}"
+								},
+								"url": {
+									"raw": "{{server_path}}/review",
+									"host": [
+										"{{server_path}}"
+									],
+									"path": [
+										"review"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Review",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"68a81a93ddb1b4246de4bef0\",\r\n    \"author\": \"Ninja\",\r\n    \"content\": \"Jeg hader at gå til yoga hos Xtreme fitness\",\r\n    \"position\": \"Medlem\"\r\n}"
+								},
+								"url": {
+									"raw": "{{server_path}}/review",
+									"host": [
+										"{{server_path}}"
+									],
+									"path": [
+										"review"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Review",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"68a81a93ddb1b4246de4bef0\",\r\n    \"author\": \"Ninja\",\r\n    \"content\": \"Jeg hader at gå til yoga hos Xtreme fitness\",\r\n    \"position\": \"Medlem\"\r\n}"
+								},
+								"url": {
+									"raw": "{{server_path}}/review/68a81a93ddb1b4246de4bef0",
+									"host": [
+										"{{server_path}}"
+									],
+									"path": [
+										"review",
+										"68a81a93ddb1b4246de4bef0"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Review By Id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"68a81a93ddb1b4246de4bef0\",\r\n    \"author\": \"Ninja\",\r\n    \"content\": \"Jeg hader at gå til yoga hos Xtreme fitness\",\r\n    \"position\": \"Medlem\"\r\n}"
+								},
+								"url": {
+									"raw": "{{server_path}}/review/68a44adf0abf87b20edb2f00",
+									"host": [
+										"{{server_path}}"
+									],
+									"path": [
+										"review",
+										"68a44adf0abf87b20edb2f00"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Subscriptions",
+			"item": [
+				{
+					"name": "Subscriptions",
+					"item": [
+						{
+							"name": "Get Subscriptions",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Ninja\",\r\n    \"email\": \"ninja@mail.com\",\r\n    \"phone\": \"12345678\",\r\n    \"subject\": \"Tilmelding til yoga\",\r\n    \"message\": \"Jeg vil gerne tilmeldes yoga-holdet, tak!\"\r\n}"
+								},
+								"url": {
+									"raw": "{{server_path}}/subscriptions",
+									"host": [
+										"{{server_path}}"
+									],
+									"path": [
+										"subscriptions"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Subscription",
+					"item": [
+						{
+							"name": "Create Subscription",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/AnneLundMøller/Desktop/Billeder/ninja.png"
+										},
+										{
+											"key": "price",
+											"value": "200",
+											"type": "text"
+										},
+										{
+											"key": "title",
+											"value": "Nyt abonnement",
+											"type": "text"
+										},
+										{
+											"key": "list",
+											"value": "Item 1",
+											"type": "text"
+										},
+										{
+											"key": "list",
+											"value": "Item 2",
+											"type": "text"
+										},
+										{
+											"key": "list",
+											"value": "Item 3",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{server_path}}/subscription",
+									"host": [
+										"{{server_path}}"
+									],
+									"path": [
+										"subscription"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Subscription",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "id",
+											"value": "68a82052d6c02b13cc5f2694",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/AnneLundMøller/Desktop/Billeder/ninja.png",
+											"disabled": true
+										},
+										{
+											"key": "price",
+											"value": "200",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "title",
+											"value": "Opdatering af Nyt abonnement",
+											"type": "text"
+										},
+										{
+											"key": "list",
+											"value": "Item 1",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "list",
+											"value": "Item 2",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "list",
+											"value": "Item 3",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{server_path}}/subscription",
+									"host": [
+										"{{server_path}}"
+									],
+									"path": [
+										"subscription"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Subscription By Id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "id",
+											"value": "68a82052d6c02b13cc5f2694",
+											"type": "text"
+										},
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/Users/AnneLundMøller/Desktop/Billeder/ninja.png",
+											"disabled": true
+										},
+										{
+											"key": "price",
+											"value": "200",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "title",
+											"value": "Opdatering af Nyt abonnement",
+											"type": "text"
+										},
+										{
+											"key": "list",
+											"value": "Item 1",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "list",
+											"value": "Item 2",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "list",
+											"value": "Item 3",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{server_path}}/subscription/68a82052d6c02b13cc5f2694",
+									"host": [
+										"{{server_path}}"
+									],
+									"path": [
+										"subscription",
+										"68a82052d6c02b13cc5f2694"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Subscription",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "id",
+											"value": "68a82052d6c02b13cc5f2694",
+											"type": "text"
+										},
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/Users/AnneLundMøller/Desktop/Billeder/ninja.png",
+											"disabled": true
+										},
+										{
+											"key": "price",
+											"value": "200",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "title",
+											"value": "Opdatering af Nyt abonnement",
+											"type": "text"
+										},
+										{
+											"key": "list",
+											"value": "Item 1",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "list",
+											"value": "Item 2",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "list",
+											"value": "Item 3",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{server_path}}/subscription/68a82052d6c02b13cc5f2694",
+									"host": [
+										"{{server_path}}"
+									],
+									"path": [
+										"subscription",
+										"68a82052d6c02b13cc5f2694"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "SignIn",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"admin@mediacollege.dk\",\r\n    \"password\" : \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server_path}}/auth/signin",
+							"host": [
+								"{{server_path}}"
+							],
+							"path": [
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Token Check",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server_path}}/auth/token",
+							"host": [
+								"{{server_path}}"
+							],
+							"path": [
+								"auth",
+								"token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "server_path",
+			"value": "http://localhost:3042",
+			"type": "default"
+		}
+	]
+}
